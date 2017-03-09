@@ -4,9 +4,9 @@ $db_host = "am1shyeyqbxzy8gc.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
      $db_user = "w6fjotyp3hvjylth";
      $db_password = "at3a7s63349xgogh";
     
-     $connection = mysqli_connect($db_host, $db_user, $db_password) or die("Connection Error: " . mysqli_error());
+     $connection = mysqli_connect($db_host, $db_name,$db_user, $db_password) or die("Connection Error: " . mysqli_error());
     
-mysqli_select_db($db_name);
+mysqli_select_db($db_name) or die("Error al seleccionar la base de datos:".mysqli_error());
     @mysqli_query("SET NAMES 'utf8'");
 
 $sql_query = "SELECT * FROM contactos;";
